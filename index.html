@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evony Troop Revival Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="toggle-container">
+        <input type="checkbox" id="theme-toggle" class="toggle-checkbox" onclick="toggleTheme()">
+        <label for="theme-toggle" class="toggle-label">
+            <div class="toggle-icon"></div>
+        </label>
+    </div>
+    <h1>Evony Troop Revival Calculator</h1>
+    <div class="container">
+        <!-- Food Input -->
+        <div class="input-group">
+            <label for="foodBatch">Food per Batch:</label>
+            <input type="text" id="foodBatch" placeholder="0" oninput="formatAndCalculate(this)">
+            <select id="foodUnit">
+                <option value="thousands">Thousands</option>
+                <option value="millions" selected>Millions</option>
+                <option value="billions">Billions</option>
+            </select>
+        </div>
+        <!-- Wood Input -->
+        <div class="input-group">
+            <label for="woodBatch">Wood per Batch:</label>
+            <input type="text" id="woodBatch" placeholder="0" oninput="formatAndCalculate(this)">
+            <select id="woodUnit">
+                <option value="thousands">Thousands</option>
+                <option value="millions" selected>Millions</option>
+                <option value="billions">Billions</option>
+            </select>
+        </div>
+        <!-- Stone Input -->
+        <div class="input-group">
+            <label for="stoneBatch">Stone per Batch:</label>
+            <input type="text" id="stoneBatch" placeholder="0" oninput="formatAndCalculate(this)">
+            <select id="stoneUnit">
+                <option value="thousands">Thousands</option>
+                <option value="millions" selected>Millions</option>
+                <option value="billions">Billions</option>
+            </select>
+        </div>
+        <!-- Ore Input -->
+        <div class="input-group">
+            <label for="oreBatch">Ore per Batch:</label>
+            <input type="text" id="oreBatch" placeholder="0" oninput="formatAndCalculate(this)">
+            <select id="oreUnit">
+                <option value="thousands">Thousands</option>
+                <option value="millions" selected>Millions</option>
+                <option value="billions">Billions</option>
+            </select>
+        </div>
+        <!-- Crystals and Power Inputs -->
+        <div class="input-group">
+            <label for="crystalCost">Crystals per Batch:</label>
+            <input type="text" id="crystalCost" value="10" oninput="formatAndCalculate(this)">
+        </div>
+        <div class="input-group">
+            <label for="powerPerBatch">Power per Batch:</label>
+            <input type="text" id="powerPerBatch" value="3,000,000" oninput="formatAndCalculate(this)">
+        </div>
+<div class="input-group">
+    <label for="crystalsAvailable">Available Crystals:</label>
+    <input type="text" id="crystalsAvailable" placeholder="0" oninput="formatAndCalculate(this)">
+</div>
+
+        <h3>Troop Counts per Tier</h3>
+        <!-- Tiers -->
+        <div class="input-group">
+            <label for="t1">Tier 1:</label>
+            <input type="text" id="t1" placeholder="Enter count" oninput="formatAndCalculate(this)">
+        </div>
+        <div class="input-group">
+            <label for="t2">Tier 2:</label>
+            <input type="text" id="t2" placeholder="Enter count" oninput="formatAndCalculate(this)">
+        </div>
+        <div class="input-group">
+            <label for="t3">Tier 3:</label>
+            <input type="text" id="t3" placeholder="Enter count" oninput="formatAndCalculate(this)">
+        </div>
+        <div class="input-group">
+            <label for="t4">Tier 4:</label>
+            <input type="text" id="t4" placeholder="Enter count" oninput="formatAndCalculate(this)">
+        </div>
+        <div class="input-group">
+            <label for="t5">Tier 5:</label>
+            <input type="text" id="t5" placeholder="Enter count" oninput="formatAndCalculate(this)">
+        </div>
+        <div class="input-group">
+            <label for="t6">Tier 6:</label>
+            <input type="text" id="t6" placeholder="Enter count" oninput="formatAndCalculate(this)">
+        </div>
+        <div class="input-group">
+            <label for="t7">Tier 7:</label>
+            <input type="text" id="t7" placeholder="Enter count" oninput="formatAndCalculate(this)">
+        </div>
+        <div class="input-group">
+            <label for="t8">Tier 8:</label>
+            <input type="text" id="t8" placeholder="Enter count" oninput="formatAndCalculate(this)">
+        </div>
+        <div class="input-group">
+            <label for="t9">Tier 9:</label>
+            <input type="text" id="t9" placeholder="Enter count" oninput="formatAndCalculate(this)">
+        </div>
+        <div class="input-group">
+            <label for="t10">Tier 10:</label>
+            <input type="text" id="t10" placeholder="Enter count" oninput="formatAndCalculate(this)">
+        </div>
+        <div class="input-group">
+            <label for="t11">Tier 11:</label>
+            <input type="text" id="t11" placeholder="Enter count" oninput="formatAndCalculate(this)">
+        </div>
+        <div class="input-group">
+            <label for="t12">Tier 12:</label>
+            <input type="text" id="t12" placeholder="Enter count" oninput="formatAndCalculate(this)">
+        </div>
+        <div class="input-group">
+            <label for="t13">Tier 13:</label>
+            <input type="text" id="t13" placeholder="Enter count" oninput="formatAndCalculate(this)">
+        </div>
+        <div class="input-group">
+            <label for="t14">Tier 14:</label>
+            <input type="text" id="t14" placeholder="Enter count" oninput="formatAndCalculate(this)">
+        </div>
+
+        <div class="input-group">
+            <label>Total Troops to Revive:</label>
+            <p id="totalTroops">0</p>
+        </div>
+        <div class="results" id="results">
+            <h3>Results</h3>
+            <p>Total Power: 0</p>
+            <p>Total Crystals Needed: 0</p>
+            <p>Additional Crystals Needed: 0</p>
+            <p>Total Food Needed: 0</p>
+            <p>Total Wood Needed: 0</p>
+            <p>Total Stone Needed: 0</p>
+            <p>Total Ore Needed: 0</p>
+        </div>
+        <div class="analysis" id="power-breakdown">
+            <h3>Power Calculation</h3>
+            <p>No power calculations yet.</p>
+        </div>
+        <div class="analysis" id="rss-breakdown">
+            <h3>RSS Calculations</h3>
+            <p>No resource calculations yet.</p>
+        </div>
+    </div>
+    <script src="scripts.js"></script>
+<footer class="footer">
+    <p>Created with ❤️ by <span class="creator">ʰᵃᵗᵉ</span> from servers 1594 & 1820</p>
+</footer>
+</body>
+
+
+</html>

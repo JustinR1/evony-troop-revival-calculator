@@ -1,0 +1,188 @@
+/* General body styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    transition: background-color 0.3s, color 0.3s;
+    padding-top: 40px; /* Default padding for larger screens */
+}
+
+@media (max-width: 600px) {
+    body {
+        padding-top: 80px; /* Increased padding for smaller screens */
+    }
+
+    .toggle-container {
+        top: 10px;
+        right: 10px;
+    }
+
+    h1 {
+        font-size: 1.5em; /* Smaller font size for mobile screens */
+    }
+}
+
+/* Title styling */
+h1 {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 20px;
+    transition: font-size 0.3s;
+}
+
+/* Container for the main content */
+.container {
+    max-width: 800px;
+    margin: auto;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+/* Styling for the toggle button */
+.toggle-container {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.toggle-checkbox {
+    display: none;
+}
+
+.toggle-label {
+    cursor: pointer;
+    width: 50px;
+    height: 25px;
+    background-color: #ccc;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    padding: 2px;
+    transition: background-color 0.3s;
+    justify-content: space-between;
+    position: relative;
+}
+
+.toggle-icon {
+    width: 20px;
+    height: 20px;
+    background-color: yellow;
+    border-radius: 50%;
+    transition: transform 0.3s, background-color 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+}
+
+/* Default sun icon */
+.toggle-label .toggle-icon:before {
+    content: '☀️';
+}
+
+/* Dark mode styling for toggle button */
+.toggle-checkbox:checked + .toggle-label {
+    background-color: #333;
+}
+
+.toggle-checkbox:checked + .toggle-label .toggle-icon {
+    transform: translateX(25px);
+    background-color: #555;
+}
+
+/* Moon icon when dark mode is active */
+.toggle-checkbox:checked + .toggle-label .toggle-icon:before {
+    content: '🌙';
+}
+
+/* Dark mode styles */
+.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+.dark-mode .container {
+    background-color: #1e1e1e;
+    border-color: #333;
+}
+
+.dark-mode .results {
+    background-color: #333;
+}
+
+.dark-mode .analysis {
+    background-color: #444;
+}
+
+/* Additional styling for input groups and results */
+.input-group {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.input-group label {
+    flex: 1;
+    margin-right: 10px;
+}
+
+.input-group input {
+    flex: 2;
+    padding: 8px;
+    box-sizing: border-box;
+}
+
+.input-group select {
+    flex: 1;
+    margin-left: 10px;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+.results, .analysis {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 10px;
+    transition: background-color 0.3s;
+}
+
+.results {
+    background-color: #e8f5e9;
+}
+
+.analysis {
+    background-color: #e3f2fd;
+}
+
+/* New sections for power and RSS breakdowns */
+.breakdown-container {
+    background-color: #e3f2fd;
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 10px;
+    transition: background-color 0.3s;
+}
+
+/* Dark mode styles for breakdown containers */
+.dark-mode .breakdown-container {
+    background-color: #444;
+}
+
+/* Footer styling */
+.footer {
+    margin-top: 50px;
+    text-align: center;
+    font-size: 0.8em;
+    color: #888;
+    padding: 10px;
+    border-top: 1px solid #ccc;
+}
+
+.footer .creator {
+    font-family: 'Courier New', monospace;
+    font-size: 1.2em;
+    color: #555;
+}
